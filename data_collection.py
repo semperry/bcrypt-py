@@ -9,7 +9,7 @@ hashed_password = bcrypt.hashpw(user_password.encode("utf8"), bcrypt.gensalt())
 
 print(hashed_password)
 
-conn = sqlite3.connect('demo.db')
+conn = sqlite3.connect('users.db')
 print("Opened Database Connection")
 
 conn.execute("INSERT INTO EMPLOYEES (ID, USERNAME, PASSWORD, AGE ) \

@@ -1,7 +1,7 @@
 import bcrypt
 import sqlite3
 
-conn = sqlite3.connect('demo.db')
+conn = sqlite3.connect('users.db')
 print("Opened Database connection")
 
 data = conn.execute("SELECT id, username, password, age FROM EMPLOYEES")
@@ -19,8 +19,12 @@ for row in data:
 
   valid_password = bcrypt.hashpw(user_password.encode(), password_hash) == password_hash
 
-  print (valid_password)
+  if valid_password:
+    print("Password is valid!")
+  else:
+    print("Invalid Credentials")
 
 print("Data returns successfully")
 
 conn.close()
+print("Connection Closed")

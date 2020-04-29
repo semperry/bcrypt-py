@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('demo.db')
+conn = sqlite3.connect('users.db')
 
 print("Database connection successful.")
 
